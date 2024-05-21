@@ -1,0 +1,101 @@
+body {
+     font-family: sans-serif;
+     line-height: 1.5;
+    padding: 50px 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+     margin: 0;
+}
+
+ul,
+ol {
+     margin: 0;
+     padding: 0;
+}
+
+img {
+     display: block;
+     max-width: 100%;
+     height: auto;
+}
+
+.item {
+    border: 1px solid black;
+    background-color: #57a152;
+    color: white;
+    padding: 15px;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: [one] 1fr [two] 1fr [three] 1fr [four]; */
+    /* grid-template-columns: 1fr 1fr 1fr minmax(200px, 500px); minmax для ширини екрану */
+    grid-template-rows: 100px 200px 150px ;
+    /* grid-template: 100px 200px 150px / repeat(3, 1fr); */
+    grid-auto-rows: 125px;
+    grid-auto-columns: 200px;
+    grid-auto-flow: dense; /* коли хочеш щоб автоматично заповнювало де поля пусті */
+    gap: 35px 15px; /* gap: row column;  */
+    /* justify-items: center;
+    align-items: center; */
+    /* place-items: center; justify-items: center; align-items: center; разом */
+    /* place-items: end start; */
+}
+
+.item-1 {
+    /* grid-column-start: span 2;  /* коли без кординатів  */ /* grid-row-start: span 2; */
+    /* grid-column-start: 2; grid-column-end: 4; grid-row-start: 1; grid-row-end: 3; */ /* коли з кординатами  */
+    /* grid-column: 1/span 3; */ /* сучасний спосіб */
+    /* grid-column: 1/-1;  */
+    grid-column: 1/3;
+    grid-row: 1/ span 2;
+    /* align-self: end; */
+}
+
+.item-2 {
+    grid-column: span 2;
+}
+
+.item-7 {
+    grid-column: 2 / 4;
+    /* justify-self: center; */
+}
+
+/* .wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas: 
+    "header header header"
+    "main . aside"
+    "footer footer footer";
+}
+.element {
+    border: 1px solid #000;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+} */
